@@ -36,7 +36,7 @@ html, body{
     background-color: $bgColor;
     line-height: 1.6;
     transition: 700ms ease-in;
-    overflow: hidden;
+    overflow-x: hidden;
     word-wrap: break-word;
     text-align: justify;
 }
@@ -137,9 +137,11 @@ nav{
 
     ul{
         @include flex(row);
+        gap: 2rem   ;
     }
     li{
         text-transform: uppercase;
+        align-self: center
     }
 }
 #header{
@@ -169,4 +171,69 @@ nav{
     width: 80%;
     @include flex(row);
     align-items: flex-start;
+}
+section{
+    background-color: $primary;
+    padding: 2rem;
+}
+#section{
+    width: 80%;
+    @include flex(row);
+    justify-content: space-around;
+
+    button{
+        background-color: $default;
+        color: $text;
+    }
+}
+
+#steps{
+
+    > div{
+        @include flex(row);
+        width: 80%;
+    }
+}
+
+
+
+footer{
+    @include flex(row);
+    flex-wrap: wrap;
+    margin: 2rem auto 10rem auto;
+    background-color: $bgColor;
+    width: 85%;
+    align-items: flex-start;
+
+    > div{
+        flex: 1;
+    }
+
+    h4{
+        font-size: 1rem;
+        text-transform: uppercase;
+    }
+
+    p{
+        font-size: 1rem;
+    }
+
+    @include mobile{
+        flex-direction: column;
+    }
+}
+.endNote{
+    @include flex(row);
+    text-align: justify;
+    justify-content: space-around;
+
+    p{
+        font-size: 1rem;
+        text-align: center;
+    }
+    @include mobile{
+        flex-direction: column-reverse;
+        gap: 0;
+        padding: 1rem;
+    }
 }
