@@ -7,10 +7,6 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
-
-    > div{
-        flex: 1;
-    }
 }
 @mixin mobile {
     @media only screen and (max-width: 800px){
@@ -93,9 +89,8 @@ select,
 textarea{
     font-family: $secondary-text;
     padding: 0.8rem 3rem;
-    border: none;
+    border: solid $dark;
     border-radius: 0.5rem;
-    background-color: $primary;
     color: $default;
     text-transform: uppercase;
     resize: none;
@@ -168,44 +163,120 @@ nav{
 }
 
 #division{
-    width: 80%;
-    @include flex(row);
-    align-items: flex-start;
+    margin-block: 5rem;
+
+    > div{
+        width: 80%;
+        @include flex(row);
+        align-items: flex-start; 
+        padding: 2rem; 
+        
+        >div{
+            flex: 1;
+        }
+    }
 }
 section{
     background-color: $primary;
-    padding: 2rem;
-}
-#section{
-    width: 80%;
-    @include flex(row);
-    justify-content: space-around;
+    margin-block: 5rem;
 
-    button{
-        background-color: $default;
-        color: $text;
+    > div{
+        width: 80%;
+        @include flex(row);
+        justify-content: space-around;
+        padding: 2rem;
+    
+        button{
+            background-color: $default;
+            color: $text;
+        }
     }
+
 }
+
 
 #steps{
+    margin-block: 2rem;
+    background-color: $primary;
+    margin-block: 5rem;
+
+    .test{
+        @include flex(row);
+    }
 
     > div{
         @include flex(row);
         width: 80%;
+        padding: 2rem;
+        gap: 3rem;
+        @include mobile{
+            flex-direction: column;
+        }
+        >div{
+            flex: 1;
+        }
+        .steps{
+            > div{
+            padding: 2rem;
+        }
+        }
+    }
+
+    .step-icons{
+        font-size: 4rem;
+
+    }
+
+    .FaAngleDoubleRight{
+        font-size: 5rem;
     }
 }
 
+#form{
+    margin-block: 5rem;
 
+    >div{
+        @include flex(row);
+
+        @include mobile{
+            flex-direction: column;
+        }
+
+        >div{
+            flex: 1;
+        }
+    }
+
+    #form-data{
+        @include flex(column);
+        border: 1px dashed $dark;
+
+        input, textarea{
+            width: 80%;
+            color: $dark;
+        }
+
+        a{
+            text-transform: lowercase;
+            color: blue;
+        }
+    }
+}
 
 footer{
+    margin-top: 5rem;
+    background-color: $primary;
+    padding: 2rem;
+}
+
+#footer{
     @include flex(row);
     flex-wrap: wrap;
-    margin: 2rem auto 10rem auto;
-    background-color: $bgColor;
-    width: 85%;
+    width: 80%;
     align-items: flex-start;
+    margin: 2rem auto 10rem auto;
 
-    > div{
+    >div{
         flex: 1;
     }
 
@@ -217,16 +288,11 @@ footer{
     p{
         font-size: 1rem;
     }
-
-    @include mobile{
-        flex-direction: column;
-    }
 }
 .endNote{
     @include flex(row);
     text-align: justify;
     justify-content: space-around;
-
     p{
         font-size: 1rem;
         text-align: center;

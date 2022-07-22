@@ -86,9 +86,8 @@ select,
 textarea {
   font-family: "Space Grotesk", sans-serif;
   padding: 0.8rem 3rem;
-  border: none;
+  border: solid #212121;
   border-radius: 0.5rem;
-  background-color: #00ff9d;
   color: #fff;
   text-transform: uppercase;
   resize: none;
@@ -142,9 +141,6 @@ nav ul {
   gap: 1rem;
   gap: 2rem;
 }
-nav ul > div {
-  flex: 1;
-}
 nav li {
   text-transform: uppercase;
   align-self: center;
@@ -160,9 +156,6 @@ nav li {
   width: 80%;
   height: 100vh;
   margin-top: 3rem;
-}
-#header > div {
-  flex: 1;
 }
 #header > div {
   width: 60%;
@@ -182,6 +175,9 @@ nav li {
 }
 
 #division {
+  margin-block: 5rem;
+}
+#division > div {
   width: 80%;
   margin: auto;
   display: flex;
@@ -190,17 +186,17 @@ nav li {
   align-items: center;
   gap: 1rem;
   align-items: flex-start;
+  padding: 2rem;
 }
-#division > div {
+#division > div > div {
   flex: 1;
 }
 
 section {
   background-color: #00ff9d;
-  padding: 2rem;
+  margin-block: 5rem;
 }
-
-#section {
+section > div {
   width: 80%;
   margin: auto;
   display: flex;
@@ -209,15 +205,26 @@ section {
   align-items: center;
   gap: 1rem;
   justify-content: space-around;
+  padding: 2rem;
 }
-#section > div {
-  flex: 1;
-}
-#section button {
+section > div button {
   background-color: #fff;
   color: #10162f;
 }
 
+#steps {
+  margin-block: 2rem;
+  background-color: #00ff9d;
+  margin-block: 5rem;
+}
+#steps .test {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
 #steps > div {
   margin: auto;
   display: flex;
@@ -226,12 +233,71 @@ section {
   align-items: center;
   gap: 1rem;
   width: 80%;
+  padding: 2rem;
+  gap: 3rem;
+}
+@media only screen and (max-width: 800px) {
+  #steps > div {
+    flex-direction: column;
+  }
 }
 #steps > div > div {
   flex: 1;
 }
+#steps > div .steps > div {
+  padding: 2rem;
+}
+#steps .step-icons {
+  font-size: 4rem;
+}
+#steps .FaAngleDoubleRight {
+  font-size: 5rem;
+}
+
+#form {
+  margin-block: 5rem;
+}
+#form > div {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+@media only screen and (max-width: 800px) {
+  #form > div {
+    flex-direction: column;
+  }
+}
+#form > div > div {
+  flex: 1;
+}
+#form #form-data {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border: 1px dashed #212121;
+}
+#form #form-data input, #form #form-data textarea {
+  width: 80%;
+  color: #212121;
+}
+#form #form-data a {
+  text-transform: lowercase;
+  color: blue;
+}
 
 footer {
+  margin-top: 5rem;
+  background-color: #00ff9d;
+  padding: 2rem;
+}
+
+#footer {
   margin: auto;
   display: flex;
   flex-direction: row;
@@ -239,28 +305,19 @@ footer {
   align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
-  margin: 2rem auto 10rem auto;
-  background-color: #ffffff;
-  width: 85%;
+  width: 80%;
   align-items: flex-start;
+  margin: 2rem auto 10rem auto;
 }
-footer > div {
+#footer > div {
   flex: 1;
 }
-footer > div {
-  flex: 1;
-}
-footer h4 {
+#footer h4 {
   font-size: 1rem;
   text-transform: uppercase;
 }
-footer p {
+#footer p {
   font-size: 1rem;
-}
-@media only screen and (max-width: 800px) {
-  footer {
-    flex-direction: column;
-  }
 }
 
 .endNote {
@@ -272,9 +329,6 @@ footer p {
   gap: 1rem;
   text-align: justify;
   justify-content: space-around;
-}
-.endNote > div {
-  flex: 1;
 }
 .endNote p {
   font-size: 1rem;

@@ -1,12 +1,11 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faInfo} from "@fortawesome/free-solid-svg-icons"
+import {FaInfo} from "react-icons/fa";
 
 export default function Nav(){
     return(
         <nav>
             <ul>
-                <li><FontAwesomeIcon icon={faInfo} /> LEARN </li>
+                <li><FaInfo /> LEARN </li>
                 <li>GET LINK</li>
                 <li>ABOUT US</li>
                 <li>CONTACT US</li>
