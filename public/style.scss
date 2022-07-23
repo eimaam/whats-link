@@ -351,10 +351,10 @@ section{
         input, textarea{
             width: 85%;
             color: $dark;
-            font-size: 16px;
 
             @include mobile{
                 width: 100%;
+                font-size: 16px !important;
             }
         }
 
