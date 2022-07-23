@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import messsaging from "../Assets/images/wa-display.webp"
 
 export default function Form(){
-    const [Link, setLink] = useState("");
+    const [Link, setLink] = useState(null);
      
     // Function to generate Link
     function generate(){
@@ -15,12 +15,15 @@ export default function Form(){
         const result = res.replace(/\s/g, '%20');
         
         // Check if Phone Number field is empty and throw error
-        if(contact.value === ""){
-            return errorMessage.innerHTML = "Number can't be empty! Phone Number needed to generate Link!"
+        let contact_value = contact.value; 
+        if(contact_value === ""){
+            return errorMessage.innerHTML = "Number cannot be empty! Phone Number needed to generate Link."
         }else{
             errorMessage.innerHTML = ""
         }
-
+        if(contact_value.length < 3){
+            return errorMessage.innerHTML = "Phone Number incorrect"
+        }
         setLink(result)
     };
     
@@ -67,15 +70,15 @@ export default function Form(){
                     name="customMessage"
                     id="customMessage" 
                     type="text" 
-                    placeholder="Enter Custom Text"
-                    rows={20}
+                    placeholder="Enter Personal Message"
+                    rows={15}
                     onKeyUp={keyPressAction}
                     />
 
                     <button onClick={generate}>Generate Link</button>
                     
-                    <div>
-                        <a href={Link} target="_blank">{Link}</a>
+                    <div id="resultLink">
+                        <a href={Link} target="_blank" rel="noreferrer">{Link}</a>
                     </div>
 
                     <p id="errorMessage"></p>

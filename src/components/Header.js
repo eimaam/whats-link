@@ -1,6 +1,7 @@
 import React from "react";
 import Nav from "./Nav";
 import chart from "../Assets/images/chart.png" 
+import { HashLink } from "react-router-hash-link"
 
 export default function Header(){
     return(
@@ -11,7 +12,9 @@ export default function Header(){
                     <h1>WHATS-LINK</h1>
                     <h2>Generate your personal WhatsApp Contact Link in 3 easy steps!</h2>
                     <h3>Give your Business more attention!</h3>
-                    <button>Generate Link</button>
+                    <HashLink to="#form">
+                        <button>Generate Link</button>
+                    </HashLink>
                 </div>
                 <div id="headerImg">
                     <img src={chart} alt="Charts, graph, stock" />

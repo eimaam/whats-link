@@ -1,6 +1,5 @@
 import React from "react";
 import Division from "./Division";
-import Header from "./Header";
 import Section from "./Section";
 import Steps from "./Steps";
 import Footer from "./Footer";
@@ -12,8 +11,7 @@ import Form from "./Form";
 export default function Home(){  
      return(
         <>
-            <Header />
-            <div className="main">
+            <div id="main" className="main" >
                 <Division
                 imageFirst={true} 
                 image={waLink}

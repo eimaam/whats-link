@@ -47,6 +47,11 @@ h1 {
   text-shadow: 1px 1px 0px #fff;
   letter-spacing: 8px;
 }
+@media only screen and (max-width: 800px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
 
 h2 {
   font-family: "Poppins", sans-serif;
@@ -55,7 +60,7 @@ h2 {
 }
 @media only screen and (max-width: 800px) {
   h2 {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -63,13 +68,18 @@ h3 {
   font-family: "Space Grotesk", sans-serif;
   font-size: 1.2rem;
 }
+@media only screen and (max-width: 800px) {
+  h3 {
+    font-size: 1rem;
+  }
+}
 
 h4 {
   font-size: 1.4rem;
 }
 
 p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-family: "Ubuntu", sans-serif;
 }
 
@@ -85,11 +95,10 @@ input,
 select,
 textarea {
   font-family: "Space Grotesk", sans-serif;
-  padding: 0.8rem 3rem;
+  padding: 1rem;
   border: solid #212121;
-  border-radius: 0.5rem;
   color: #fff;
-  text-transform: uppercase;
+  text-transform: capitalize;
   resize: none;
 }
 
@@ -119,18 +128,30 @@ button:hover {
 }
 
 nav {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
   width: 100%;
   background-color: #ffffff;
   font-family: "Space Grotesk", sans-serif;
   position: fixed;
   top: 0;
-  gap: 1rem;
-  align-items: center;
-  justify-content: space-between;
   padding: 1rem;
   box-shadow: 1px 1px;
   z-index: 10;
   margin: 0;
+}
+@media only screen and (max-width: 800px) {
+  nav {
+    justify-content: space-between;
+    padding: 0.5rem;
+  }
+}
+nav .site-title {
+  color: #00ff9d;
 }
 nav ul {
   margin: auto;
@@ -141,7 +162,62 @@ nav ul {
   gap: 1rem;
   gap: 2rem;
 }
+@media only screen and (max-width: 800px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+  }
+}
 nav li {
+  text-transform: uppercase;
+  align-self: center;
+}
+
+.bars, .close {
+  font-size: 1.2rem;
+  display: none;
+}
+@media only screen and (max-width: 800px) {
+  .bars, .close {
+    display: block;
+  }
+}
+
+#mNav {
+  display: none;
+  height: 100%;
+  background-color: #ffffff;
+  font-family: "Space Grotesk", sans-serif;
+  position: fixed;
+  box-shadow: 1px 1px;
+  z-index: 100;
+}
+@media only screen and (max-width: 800px) {
+  #mNav {
+    display: none;
+    width: 80%;
+    padding: 1rem 2rem;
+    inset: 0 20% 0 0;
+  }
+}
+#mNav .close {
+  font-size: 1.6rem;
+  position: relative;
+  right: -100%;
+}
+#mNav ul {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  height: 60vh;
+  font-family: "Poppins", sans-serif;
+  justify-content: space-around;
+  margin-top: 5rem;
+}
+#mNav li {
   text-transform: uppercase;
   align-self: center;
 }
@@ -156,6 +232,12 @@ nav li {
   width: 80%;
   height: 100vh;
   margin-top: 3rem;
+}
+@media only screen and (max-width: 800px) {
+  #header {
+    flex-direction: column-reverse;
+    width: 100%;
+  }
 }
 #header > div {
   width: 60%;
@@ -188,6 +270,13 @@ nav li {
   align-items: flex-start;
   padding: 2rem;
 }
+@media only screen and (max-width: 800px) {
+  #division > div {
+    width: 100%;
+    gap: 3rem;
+    flex-direction: column-reverse;
+  }
+}
 #division > div > div {
   flex: 1;
 }
@@ -207,6 +296,13 @@ section > div {
   justify-content: space-around;
   padding: 2rem;
 }
+@media only screen and (max-width: 800px) {
+  section > div {
+    width: 100%;
+    gap: 3rem;
+    flex-direction: column;
+  }
+}
 section > div button {
   background-color: #fff;
   color: #10162f;
@@ -217,13 +313,20 @@ section > div button {
   background-color: #00ff9d;
   margin-block: 5rem;
 }
-#steps .test {
+#steps .step1 {
   margin: auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 1rem;
+}
+@media only screen and (max-width: 800px) {
+  #steps .step1 {
+    width: 100%;
+    gap: 3rem;
+    flex-direction: column;
+  }
 }
 #steps > div {
   margin: auto;
@@ -239,6 +342,7 @@ section > div button {
 @media only screen and (max-width: 800px) {
   #steps > div {
     flex-direction: column;
+    width: 100%;
   }
 }
 #steps > div > div {
@@ -253,9 +357,31 @@ section > div button {
 #steps .FaAngleDoubleRight {
   font-size: 5rem;
 }
+@media only screen and (max-width: 800px) {
+  #steps .FaAngleDoubleRight {
+    font-size: 3rem;
+    display: none;
+  }
+}
+#steps .FaAngleDoubleDown {
+  display: none;
+  font-size: 5rem;
+}
+@media only screen and (max-width: 800px) {
+  #steps .FaAngleDoubleDown {
+    font-size: 3rem;
+    display: block;
+  }
+}
 
 #form {
-  margin-block: 5rem;
+  margin-block: 2rem;
+  padding: 2rem;
+}
+@media only screen and (max-width: 800px) {
+  #form {
+    padding: 0.5rem;
+  }
 }
 #form > div {
   margin: auto;
@@ -281,14 +407,34 @@ section > div button {
   align-items: center;
   gap: 1rem;
   border: 1px dashed #212121;
+  padding: 1rem;
+}
+@media only screen and (max-width: 800px) {
+  #form #form-data {
+    width: 100%;
+  }
 }
 #form #form-data input, #form #form-data textarea {
-  width: 80%;
+  width: 85%;
   color: #212121;
+}
+@media only screen and (max-width: 800px) {
+  #form #form-data input, #form #form-data textarea {
+    width: 100%;
+  }
+}
+#form #form-data #resultLink {
+  width: 85%;
+  padding: 1rem;
+  border: 1px dashed #212121;
 }
 #form #form-data a {
   text-transform: lowercase;
   color: blue;
+}
+#form #form-data p {
+  color: red;
+  text-align: justify;
 }
 
 footer {
@@ -304,20 +450,24 @@ footer {
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  flex-wrap: wrap;
   width: 80%;
   align-items: flex-start;
   margin: 2rem auto 10rem auto;
 }
+@media only screen and (max-width: 800px) {
+  #footer {
+    flex-direction: column;
+  }
+}
 #footer > div {
   flex: 1;
+}
+#footer a {
+  text-transform: none;
 }
 #footer h4 {
   font-size: 1rem;
   text-transform: uppercase;
-}
-#footer p {
-  font-size: 1rem;
 }
 
 .endNote {

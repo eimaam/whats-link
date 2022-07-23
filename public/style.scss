@@ -58,24 +58,31 @@ h1{
     font-family: $heading-text;
     text-shadow: 1px 1px 0px $default;
     letter-spacing: 8px;
+
+    @include mobile{
+        font-size: 2rem;
+    }
 }
 h2{
     font-family: $heading-text;
     font-size: 2rem;
     text-transform: uppercase;
     @include mobile{
-        font-size: 1.6rem;
+        font-size: 1.2rem;
     }
 }
 h3{
     font-family: $secondary-text;
     font-size: 1.2rem;
+    @include mobile{
+        font-size: 1rem;
+    }
 }
 h4{
     font-size: 1.4rem;
 }
 p{
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-family: $default-text;
 }
 img{
@@ -88,11 +95,10 @@ input,
 select,  
 textarea{
     font-family: $secondary-text;
-    padding: 0.8rem 3rem;
+    padding: 1rem;
     border: solid $dark;
-    border-radius: 0.5rem;
     color: $default;
-    text-transform: uppercase;
+    text-transform: capitalize;
     resize: none;
 }
 button{
@@ -117,33 +123,91 @@ button{
     }
 }
 nav{
+    @include flex(row);
     width: 100%;
     background-color: $bgColor;
     font-family: $secondary-text;
     position: fixed;
     top: 0;
-    gap: 1rem;
-    align-items: center;
-    justify-content: space-between;
     padding: 1rem;
     box-shadow: 1px 1px;
     z-index: 10;
     margin: 0;
+    @include mobile{
+        justify-content: space-between;
+        padding: 0.5rem;
+    }
+
+    .site-title{
+        color: $primary;
+    }
 
     ul{
         @include flex(row);
-        gap: 2rem   ;
+        gap: 2rem;
+
+        @include mobile{
+            display: none;
+            flex-direction: column;
+        }
     }
     li{
         text-transform: uppercase;
         align-self: center
     }
+
 }
+.bars, .close{
+    font-size: 1.2rem;
+    display: none;
+    @include mobile{
+        display: block;
+    }
+}
+#mNav {
+    display: none;
+    height: 100%;
+    background-color: $bgColor;
+    font-family: $secondary-text;
+    position: fixed;
+    box-shadow: 1px 1px;
+    z-index: 100;
+    @include mobile{
+        display: none;
+        width: 80%;
+        padding: 1rem 2rem;
+        inset: 0 20% 0 0;
+    }
+
+    .close{
+        font-size: 1.6rem;
+        position: relative;
+        right: -100%;
+    }
+
+    ul{
+        @include flex(column);
+        height: 60vh;
+        font-family: $heading-text;
+        justify-content: space-around;
+        margin-top: 5rem;
+    }
+    
+    li{
+        text-transform: uppercase;
+        align-self: center
+    }
+}
+
 #header{
     @include flex(row);
     width: 80%;
     height: 100vh;
     margin-top: 3rem;
+    @include mobile{
+        flex-direction: column-reverse;
+        width: 100%;
+    }
     
     > div{
       width: 60%;  
@@ -170,6 +234,11 @@ nav{
         @include flex(row);
         align-items: flex-start; 
         padding: 2rem; 
+        @include mobile{
+            width: 100%;
+            gap: 3rem;
+            flex-direction: column-reverse;
+        }
         
         >div{
             flex: 1;
@@ -185,6 +254,11 @@ section{
         @include flex(row);
         justify-content: space-around;
         padding: 2rem;
+        @include mobile{
+            width: 100%;
+            gap: 3rem;
+            flex-direction: column;
+        }
     
         button{
             background-color: $default;
@@ -194,14 +268,18 @@ section{
 
 }
 
-
 #steps{
     margin-block: 2rem;
     background-color: $primary;
     margin-block: 5rem;
 
-    .test{
+    .step1{
         @include flex(row);
+        @include mobile{
+            width: 100%;
+            gap: 3rem;
+            flex-direction: column;
+        }
     }
 
     > div{
@@ -211,6 +289,7 @@ section{
         gap: 3rem;
         @include mobile{
             flex-direction: column;
+            width: 100%;
         }
         >div{
             flex: 1;
@@ -229,15 +308,30 @@ section{
 
     .FaAngleDoubleRight{
         font-size: 5rem;
+        @include mobile{
+            font-size: 3rem;
+            display: none;
+        }
+    }
+    .FaAngleDoubleDown{
+        display: none;
+        font-size: 5rem;
+        @include mobile{
+            font-size: 3rem;
+            display: block;
+        }
     }
 }
 
 #form{
-    margin-block: 5rem;
-
-    >div{
+    margin-block: 2rem;
+    padding: 2rem;
+    @include mobile{
+        padding: 0.5rem;
+    }
+    
+    &>div{
         @include flex(row);
-
         @include mobile{
             flex-direction: column;
         }
@@ -250,15 +344,33 @@ section{
     #form-data{
         @include flex(column);
         border: 1px dashed $dark;
+        padding: 1rem;
+        @include mobile{
+            width: 100%;
+        }
 
         input, textarea{
-            width: 80%;
+            width: 85%;
             color: $dark;
+
+            @include mobile{
+                width: 100%;
+            }
+        }
+
+        #resultLink{
+            width: 85%;
+            padding: 1rem;
+            border: 1px dashed $dark;
         }
 
         a{
             text-transform: lowercase;
             color: blue;
+        }
+        p{
+            color: red;
+            text-align: justify;
         }
     }
 }
@@ -271,23 +383,24 @@ footer{
 
 #footer{
     @include flex(row);
-    flex-wrap: wrap;
     width: 80%;
     align-items: flex-start;
     margin: 2rem auto 10rem auto;
+    @include mobile{
+        flex-direction: column;
+    }
 
     >div{
         flex: 1;
     }
-
+    a{
+        text-transform: none;
+    }
     h4{
         font-size: 1rem;
         text-transform: uppercase;
     }
 
-    p{
-        font-size: 1rem;
-    }
 }
 .endNote{
     @include flex(row);
