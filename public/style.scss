@@ -358,11 +358,15 @@ section{
         }
 
         #resultLink{
+            @include flex(row);
+            justify-content: space-between;
             width: 85%;
             padding: 1rem;
             border: 1px dashed $dark;
         }
-
+        .FaCopy{
+            cursor: pointer;
+        }
         a{
             text-transform: lowercase;
             color: blue;

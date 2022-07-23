@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {FaCopy} from "react-icons/fa"
 
 // image
 import messsaging from "../Assets/images/wa-display.webp"
@@ -47,7 +48,17 @@ export default function Form(){
             setLink(result);
         }
     }
-    
+    // Function to Copy generated link
+    const copyText = () =>{
+        const errorMessage =  document.getElementById("errorMessage");
+        const result = document.getElementById("output");
+        
+        if(result === ""){
+            errorMessage.innerHTML = "No Link generated!"
+        }else{
+            navigator.clipboard.writeText(result);
+        }
+    }
     
    
         
@@ -77,9 +88,10 @@ export default function Form(){
 
                     <button onClick={generate}>Generate Link</button>
                     
-                    <div id="resultLink">
-                        <a href={Link} target="_blank" rel="noreferrer">{Link}</a>
-                    </div>
+                    {Link && <div id="resultLink">
+                        <a id="output" href={Link} target="_blank" rel="noreferrer">{Link}</a>
+                        <p onClick={copyText}><FaCopy className="FaCopy"/></p>
+                    </div>}
 
                     <p id="errorMessage"></p>
                 </div>

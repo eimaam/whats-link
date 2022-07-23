@@ -423,9 +423,19 @@ section > div button {
   }
 }
 #form #form-data #resultLink {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
   width: 85%;
   padding: 1rem;
   border: 1px dashed #212121;
+}
+#form #form-data .FaCopy {
+  cursor: pointer;
 }
 #form #form-data a {
   text-transform: lowercase;
