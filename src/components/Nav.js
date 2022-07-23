@@ -3,15 +3,14 @@ import {FaInfo, FaBars, FaCaretLeft} from "react-icons/fa";
 import { HashLink } from "react-router-hash-link"
 
 export default function Nav(){
-    const body = document.getElementById("main");
-    const mNav = document.getElementById("mNav");
+    // const body = document.getElementById("main");
 
     
     // Mobile Navigation setup
     function showHideNav(){
         const hamburger = document.getElementById("hamburger") 
         const closeNav = document.getElementById("closeNav");
-
+        const mNav = document.getElementById("mNav");
         if(mNav.style.display !== "block"){
             mNav.style.display = "block"
             closeNav.style.display = "block"
