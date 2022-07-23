@@ -72,7 +72,7 @@ export default function Form(){
                 <div id="form-data">
                     <input 
                     id="number" 
-                    type="text" 
+                    type="number" 
                     placeholder="Number with Country Code (e.g 2348012345678"
                     onKeyUp={keyPressAction}
                     />

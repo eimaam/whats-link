@@ -363,6 +363,9 @@ section{
             width: 85%;
             padding: 1rem;
             border: 1px dashed $dark;
+            @include mobile{
+                width: 100%;
+            }
         }
         .FaCopy{
             cursor: pointer;

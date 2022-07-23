@@ -434,6 +434,11 @@ section > div button {
   padding: 1rem;
   border: 1px dashed #212121;
 }
+@media only screen and (max-width: 800px) {
+  #form #form-data #resultLink {
+    width: 100%;
+  }
+}
 #form #form-data .FaCopy {
   cursor: pointer;
 }
