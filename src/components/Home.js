@@ -20,13 +20,15 @@ export default function Home(){
                 btnLabel="read more"
                 />
                 <Steps />
+                
+                <Form />
+                
                 <Section 
                 label1="Reach more Customers?"
                 label2="Lets us manage your social Accounts"
                 detail="With our qualified team of Social Media Managers and Business strategist be sure to get more traffic when we help you market."
                 btnLabel="Check pricing"
                 />
-                <Form />
 
                 <Footer />
             </div>

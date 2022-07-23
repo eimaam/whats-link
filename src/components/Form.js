@@ -62,15 +62,15 @@ export default function Form(){
                     <input 
                     id="number" 
                     type="text" 
-                    placeholder="Enter Number with Country Code"
+                    placeholder="Number with Country Code (e.g 2348012345678"
                     onKeyUp={keyPressAction}
                     />
-
+                    <h3>Enter message your Customers/Clients should see when contacting you:</h3>
                     <textarea 
                     name="customMessage"
                     id="customMessage" 
                     type="text" 
-                    placeholder="Enter Personal Message"
+                    placeholder="Enter Personalized Message..."
                     rows={15}
                     onKeyUp={keyPressAction}
                     />

@@ -95,10 +95,9 @@ input,
 select,
 textarea {
   font-family: "Space Grotesk", sans-serif;
-  padding: 1rem;
-  border: solid #212121;
+  padding: 1rem 0.5rem;
+  border: 1px solid #212121;
   color: #fff;
-  text-transform: capitalize;
   resize: none;
 }
 
@@ -139,7 +138,7 @@ nav {
   font-family: "Space Grotesk", sans-serif;
   position: fixed;
   top: 0;
-  padding: 1rem;
+  padding-inline: 1rem;
   box-shadow: 1px 1px;
   z-index: 10;
   margin: 0;

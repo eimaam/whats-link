@@ -95,10 +95,9 @@ input,
 select,  
 textarea{
     font-family: $secondary-text;
-    padding: 1rem;
-    border: solid $dark;
+    padding: 1rem 0.5rem;
+    border: 1px solid $dark;
     color: $default;
-    text-transform: capitalize;
     resize: none;
 }
 button{
@@ -129,7 +128,7 @@ nav{
     font-family: $secondary-text;
     position: fixed;
     top: 0;
-    padding: 1rem;
+    padding-inline: 1rem;
     box-shadow: 1px 1px;
     z-index: 10;
     margin: 0;
