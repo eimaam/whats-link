@@ -31,6 +31,7 @@ export default function Form(){
             return errorMessage.innerHTML = "Phone Number incorrect"
         }
         if(customMessage.value === ""){
+            result = res.replace(/\s/g, '%20');
             result = res.replace("+", "")
         }
         setLink(result)
