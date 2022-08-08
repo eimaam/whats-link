@@ -18,7 +18,7 @@ export default function Form(){
         const errorMessage =  document.getElementById("errorMessage");
         const customMessage = document.getElementById("customMessage");
         const res = `https://api.whatsapp.com/send?phone=${value}&text=${customMessage.value}`;
-        const result = res.replace(/\s/g, '%20');
+        let result = res.replace(/\s/g, '%20');
         
         // Check if Phone Number field is empty and throw error
         // let contact_value = contact.value; 
@@ -29,6 +29,9 @@ export default function Form(){
         }
         if(value < 3){
             return errorMessage.innerHTML = "Phone Number incorrect"
+        }
+        if(customMessage.value === ""){
+            result = res.replace("+", "")
         }
         setLink(result)
     };
