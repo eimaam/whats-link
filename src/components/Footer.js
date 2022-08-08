@@ -20,12 +20,13 @@ export default function Footer(){
                 </div>
                 <div>
                     <h4>Reach Us:</h4>
-                    <p>whatslink@techdesk.io</p>
+                    <p>1leadtechie@gmail</p>
                 </div>
             </div>
             <div className="endNote">
                 <div>
-                    <p>Built by <a href="techdesk.vercel.app">Tech Desk Inc.</a> All rights reserved. &copy; 2022</p>
+                    <p>Built with ❤️ by <a href="https://imamddahir.vercel.app">Eimaam.</a></p>
+                    <p>All rights reserved. Tech Desk Inc. &copy; 2022</p>
                 </div>
                 <div>
                     <p>Privacy Policy. Terms and Conditions. Documentation.</p>

@@ -38,7 +38,7 @@ export default function Nav(){
             <h2 className="site-title">Whats-Link</h2>
             <ul>
                 <HashLink to="#steps"><li><FaInfo /> LEARN </li></HashLink>
-                <li>GET LINK</li>
+                <HashLink to="#form">GET LINK</HashLink>
                 <li>ABOUT US</li>
                 <li><a href="mailto:1leadtechie@gmail.com">CONTACT US </a></li>
                 <li><a href="github.com/eimaam/whats-link">SOURCE CODE</a></li>
@@ -51,7 +51,7 @@ export default function Nav(){
             <FaCaretLeft id="closeNav" className="close" onClick={showHideNav}/>
             <ul>
                 <HashLink to="#steps"><li><FaInfo /> LEARN </li></HashLink>
-                <li>GET LINK</li>
+                <HashLink to="#form">GET LINK</HashLink>
                 <li>ABOUT US</li>
                 <li><a href="mailto:1leadtechie@gmail.com">CONTACT US </a></li>
                 <li><a href="github.com/eimaam/whats-link">SOURCE CODE</a></li>

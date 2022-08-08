@@ -1,28 +1,33 @@
 import React, { useState } from "react";
 import {FaCopy} from "react-icons/fa"
+// react-phone-number-input package
+import PhoneInput from "react-phone-number-input";
+import 'react-phone-number-input/style.css'
 
 // image
 import messsaging from "../Assets/images/wa-display.webp"
 
 export default function Form(){
+    // State for managing Link generation
     const [Link, setLink] = useState(null);
-     
+    // setting state of input to react-phone-number-input package defined states
+    const [value, setValue] = useState()
+
     // Function to generate Link
     function generate(){
         const errorMessage =  document.getElementById("errorMessage");
-        const contact = document.getElementById("number");
         const customMessage = document.getElementById("customMessage");
-        const res = `https://api.whatsapp.com/send?phone=+${contact.value}&text=${customMessage.value}`;
+        const res = `https://api.whatsapp.com/send?phone=+${value}&text=${customMessage.value}`;
         const result = res.replace(/\s/g, '%20');
         
         // Check if Phone Number field is empty and throw error
-        let contact_value = contact.value; 
-        if(contact_value === ""){
-            return errorMessage.innerHTML = "Number cannot be empty! Phone Number needed to generate Link."
+        // let contact_value = contact.value; 
+        if(value === undefined){
+            return errorMessage.innerHTML = "Phone Number cannot be empty! Its required to generate a Link."
         }else{
             errorMessage.innerHTML = ""
         }
-        if(contact_value.length < 3){
+        if(value < 3){
             return errorMessage.innerHTML = "Phone Number incorrect"
         }
         setLink(result)
@@ -34,6 +39,8 @@ export default function Form(){
         const contact = document.getElementById("number");
         const customMessage = document.getElementById("customMessage");
         const res = `https://api.whatsapp.com/send?phone=+${contact.value}&text=${customMessage.value}`;
+        // replace white whitespaces in custom message with "%20" in order to follow the
+        // default WhatsApp link design 
         const result = res.replace(/\s/g, '%20');
 
         // Check if Phone Number field is empty and throw error
@@ -48,7 +55,8 @@ export default function Form(){
             setLink(result);
         }
     }
-    // Function to Copy generated link
+
+    // Copy generated link
     const copyText = () =>{
         const errorMessage =  document.getElementById("errorMessage");
         const result = document.getElementById("output");
@@ -61,8 +69,7 @@ export default function Form(){
     }
     
    
-        
-
+// Page content
     return (
         <div id="form">
             <div>
@@ -70,30 +77,38 @@ export default function Form(){
                     <img src={messsaging} alt="whatsapp ui" />
                 </div>
                 <div id="form-data">
-                    <input 
-                    id="number" 
-                    type="number" 
-                    placeholder="Number with Country Code (e.g 2348012345678"
-                    onKeyUp={keyPressAction}
+                    {/* React-phone-number-input <PhoneInput /> package component*/}
+                    <PhoneInput
+                        className="PhoneInput"
+                        id="number"
+                        placeholder="Enter phone number"
+                        value={value}
+                        onChange={setValue}
+                        onKeyUp={keyPressAction}
+                        defaultCountry="NG"
+                        limitMaxLength={true}
                     />
                     <h3>Enter message your Customers/Clients should see when contacting you:</h3>
                     <textarea 
-                    name="customMessage"
-                    id="customMessage" 
-                    type="text" 
-                    placeholder="Enter Personalized Message..."
-                    rows={15}
-                    onKeyUp={keyPressAction}
+                        name="customMessage"
+                        id="customMessage" 
+                        type="text" 
+                        placeholder="Enter Personalized Message..."
+                        rows={15}
+                        onKeyUp={keyPressAction}
                     />
 
+                    <p id="errorMessage"></p>
                     <button onClick={generate}>Generate Link</button>
                     
-                    {Link && <div id="resultLink">
+                    {/* Result Link displayed on condition that Phone number field is not empty */}
+                    {
+                    Link && 
+                    <div id="resultLink">
                         <a id="output" href={Link} target="_blank" rel="noreferrer">{Link}</a>
                         <p onClick={copyText}><FaCopy className="FaCopy"/></p>
                     </div>}
 
-                    <p id="errorMessage"></p>
                 </div>
             </div>
         </div>

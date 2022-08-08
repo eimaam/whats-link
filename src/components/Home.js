@@ -16,7 +16,7 @@ export default function Home(){
                 imageFirst={true} 
                 image={waLink}
                 title="Get professional with your business"
-                content="Give your business a better standing and look more professional with some of our business tools!"
+                content="Easily reach more customers and give your business more professional stand by using this WhatsApp Link Generator. One of our buiness management tool. "
                 btnLabel="read more"
                 />
                 <Steps />
