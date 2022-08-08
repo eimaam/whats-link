@@ -73,7 +73,7 @@ export default function Form(){
     return (
         <div id="form">
             <div>
-                <div className="template">
+                <div className="template-img">
                     <img src={WAtemplate} alt="whatsapp ui" />
                 </div>
                 <div id="form-data">
@@ -88,7 +88,7 @@ export default function Form(){
                         defaultCountry="NG"
                         limitMaxLength={true}
                     />
-                    <h3>Enter personalized message your Customers/Clients will send to you: (eg. Hey #Business! What's the cost of this?"</h3>
+                    <h3>Enter personalized message your Customers/Clients will send to you: </h3>
                     <textarea 
                         name="customMessage"
                         id="customMessage" 

@@ -373,8 +373,12 @@ section{
 
         h3{
             all: unset;
+            width: 80%;
             font-size: 1rem;
             font-family: $default-text;
+            text-align: left;
+            margin: left;
+            display: block;
         }
         input, textarea{
             width: 85%;

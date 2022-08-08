@@ -438,8 +438,12 @@ section > div button {
 }
 #form #form-data h3 {
   all: unset;
+  width: 80%;
   font-size: 1rem;
   font-family: "Ubuntu", sans-serif;
+  text-align: left;
+  margin: left;
+  display: block;
 }
 #form #form-data input, #form #form-data textarea {
   width: 85%;
