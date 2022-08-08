@@ -38,7 +38,7 @@ export default function Form(){
         const errorMessage =  document.getElementById("errorMessage");
         const contact = document.getElementById("number");
         const customMessage = document.getElementById("customMessage");
-        const res = `https://api.whatsapp.com/send?phone=+${contact.value}&text=${customMessage.value}`;
+        const res = `https://api.whatsapp.com/send?phone=${contact.value}&text=${customMessage.value}`;
         // replace white whitespaces in custom message with "%20" in order to follow the
         // default WhatsApp link design 
         const result = res.replace(/\s/g, '%20');
