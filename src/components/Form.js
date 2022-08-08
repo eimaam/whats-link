@@ -5,7 +5,7 @@ import PhoneInput from "react-phone-number-input";
 import 'react-phone-number-input/style.css'
 
 // image
-import messsaging from "../Assets/images/wa-display.webp"
+import WAtemplate from "../Assets/images/whatsapp-template.jpg"
 
 export default function Form(){
     // State for managing Link generation
@@ -73,8 +73,8 @@ export default function Form(){
     return (
         <div id="form">
             <div>
-                <div>
-                    <img src={messsaging} alt="whatsapp ui" />
+                <div className="template">
+                    <img src={WAtemplate} alt="whatsapp ui" />
                 </div>
                 <div id="form-data">
                     {/* React-phone-number-input <PhoneInput /> package component*/}
@@ -88,7 +88,7 @@ export default function Form(){
                         defaultCountry="NG"
                         limitMaxLength={true}
                     />
-                    <h3>Enter message your Customers/Clients should see when contacting you:</h3>
+                    <h3>Enter personalized message your Customers/Clients will send to you: (eg. Hey #Business! What's the cost of this?"</h3>
                     <textarea 
                         name="customMessage"
                         id="customMessage" 

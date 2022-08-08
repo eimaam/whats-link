@@ -399,6 +399,9 @@ section > div button {
 #form > div > div {
   width: 50%;
 }
+#form img {
+  width: 300px;
+}
 #form .PhoneInput {
   width: 85%;
   border-radius: 0.5rem;
