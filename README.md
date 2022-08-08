@@ -1,6 +1,15 @@
-# Getting Started with Create React App
+# Whats-Link: WhatsApp Link Generator:
+WhatsApp is unarguably the most used social messaging platform and its growth continues as many small businesses employ the use of its many features on the Business version of the App to push their businesses. One of its important feature for businesses been “Short Link” which allows people/customers effortlessly contact a business. 
+<p> `Whats-Link` is a web app built with ReactJS, it gives a user ability to create a custom WhatsApp Link in 3 easy steps which Customers, Clients or Friends can reach his/her WhatsApp inbox in one click with an optional predefined/personal message, e.g. “Hey Bernie Cakes! I’d love to order 2 velvet cakes.” that in place if added to contact buttons on Business sites or other social platforms eases the way customers reach out to that very business. <p>
+`Whats-Link` extends the ability of creating short links or profile links to not just the business version of WhatsApp. Check it out!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Technologies used:
+`ReactJS`, `SCSS`
+### Packages: 
+`react-icons`, `react-phone-number-input` 
+
+
+
 
 ## Available Scripts
 
