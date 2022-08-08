@@ -17,7 +17,7 @@ export default function Form(){
     function generate(){
         const errorMessage =  document.getElementById("errorMessage");
         const customMessage = document.getElementById("customMessage");
-        const res = `https://api.whatsapp.com/send?phone=+${value}&text=${customMessage.value}`;
+        const res = `https://api.whatsapp.com/send?phone=${value}&text=${customMessage.value}`;
         const result = res.replace(/\s/g, '%20');
         
         // Check if Phone Number field is empty and throw error
@@ -36,15 +36,15 @@ export default function Form(){
      
     function keyPressAction(event){
         const errorMessage =  document.getElementById("errorMessage");
-        const contact = document.getElementById("number");
+        const phoneNumber = document.getElementById("number");
         const customMessage = document.getElementById("customMessage");
-        const res = `https://api.whatsapp.com/send?phone=${contact.value}&text=${customMessage.value}`;
+        const res = `https://api.whatsapp.com/send?phone=${phoneNumber.value}&text=${customMessage.value}`;
         // replace white whitespaces in custom message with "%20" in order to follow the
         // default WhatsApp link design 
         const result = res.replace(/\s/g, '%20');
 
         // Check if Phone Number field is empty and throw error
-        if(contact.value === ""){
+        if(phoneNumber.value === ""){
             return errorMessage.innerHTML = "Number can't be empty! Phone Number needed to generate Link!"
         }else{
             errorMessage.innerHTML = ""
