@@ -2,6 +2,7 @@
   "name": "whats-link",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.0",
@@ -12,7 +13,7 @@
     "react-phone-number-input": "^3.4.14",
     "react-router-dom": "^7.9.6",
     "react-router-hash-link": "^2.4.3",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "sass": "^1.94.2",
     "web-vitals": "^5.1.0"
   },
@@ -42,6 +43,10 @@
   },
   "devDependencies": {
     "@types/node": "^24.10.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@types/react-router-dom": "^5.3.3",
+    "@types/react-router-hash-link": "^2.4.9",
     "typescript": "^5.9.3"
   }
 }
