@@ -1,9 +1,14 @@
-import React from "react";
+
+import { useState } from "react";
 import {FaInfo, FaBars, FaCaretLeft} from "react-icons/fa";
 import { HashLink } from "react-router-hash-link"
 
-export default function Nav(){
+const Nav:React.FC = () => {
     // const body = document.getElementById("main");
+    const [isMobileNavOpen, setIsMobileNavOpen] = useState<boolean>(false);
+    const [showMenu, setShowMenu] = useState<boolean>(false);
+
+
 
     
     // Mobile Navigation setup
@@ -61,3 +66,5 @@ export default function Nav(){
         </>
     )
 }
+
+export default Nav;

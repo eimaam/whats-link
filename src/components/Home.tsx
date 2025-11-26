@@ -1,14 +1,14 @@
-import React from "react";
+
 import Division from "./Division";
 import Section from "./Section";
 import Steps from "./Steps";
 import Footer from "./Footer";
 // images
-import chart from "../Assets/images/chart.png" 
-import waLink from "../Assets/images/undraw_share_link_re_54rx.svg"
+import chart from "../assets/images/chart.png" 
+import waLink from "../assets/images/undraw_share_link_re_54rx.svg"
 import Form from "./Form";
 
-export default function Home(){  
+const Home: React.FC = () => {
      return(
         <>
             <div id="main" className="main" >
@@ -35,3 +35,5 @@ export default function Home(){
         </>
      )
 }
+
+export default Home;

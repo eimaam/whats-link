@@ -1,10 +1,10 @@
-import React from "react";
+
 import Nav from "./Nav";
-import chart from "../Assets/images/chart.png" 
+import chart from "../assets/images/chart.png"
 import { HashLink } from "react-router-hash-link"
 
-export default function Header(){
-    return(
+const Header:React.FC = () => {
+    return (
         <header>
             <Nav />
             <div id="header">
@@ -23,3 +23,5 @@ export default function Header(){
         </header>
     )
 }
+
+export default Header;

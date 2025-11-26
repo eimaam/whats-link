@@ -1,6 +1,7 @@
-import React from "react";
+
 import {HashLink} from "react-router-hash-link"
-export default function Footer(){
+
+const Footer:React.FC = () => {
     return (
         <footer>
             <div id="footer">
@@ -25,7 +26,7 @@ export default function Footer(){
             </div>
             <div className="endNote">
                 <div>
-                    <p>Built with ❤️ by <a href="https://imamddahir.vercel.app">Eimaam.</a></p>
+                    <p>Built with ❤️ by <a href="https://eimaam.dev">Eimaam.</a></p>
                     <p>All rights reserved. Tech Desk Inc. &copy; 2022</p>
                 </div>
                 <div>
@@ -35,3 +36,5 @@ export default function Footer(){
         </footer>
     )
 }
+
+export default Footer;

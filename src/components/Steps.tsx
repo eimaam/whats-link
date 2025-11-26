@@ -1,8 +1,8 @@
-import React from "react";
+
 import {FaWhatsapp, FaLink, FaRocketchat, FaAngleDoubleRight, FaAngleDoubleDown} from "react-icons/fa"
 
 
-export default function Steps(){
+const Steps:React.FC = () => {
     return(
         <div id="steps">
             <div>
@@ -37,3 +37,5 @@ export default function Steps(){
         </div>
     )
 }
+
+export default Steps;
